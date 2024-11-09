@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Hábitos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <aside class="side-menu">
+        <div class="user-info">
+            <div class="user-details">
+                <h3>Adalberto Banks Mendoza</h3>
+            </div>
+        </div>
+        <ul>
+            <li><a href="index.html"><i class="icon-home"></i> Mi Día</a></li>
+            <li><a href="semana.html"><i class="icon-important"></i> Semana</a></li>
+            <li><a href="progress.html"><i class="icon-stats"></i> Progreso</a></li>            
+        </ul>
+        <ul class="extra">
+            <li><i class="icon-settings"></i> Ajustes</li>
+            <li><i class="icon-notifications"></i> Notificaciones</li>
+            <li><i class="icon-darkmode"></i> Modo Oscuro</li>
+        </ul>
+    </aside>
+
+    <main class="main-container">
+        <header class="header-centered">
+            <h1>Mi Día</h1>
+            <p>Sábado, 5 de octubre</p>
+        </header>
+
+        <section class="add-habit centered-content">
+            <div class="input-wrapper">
+                <span class="plus-icon">+</span>
+                <input type="text" id="habitName" placeholder="Añadir un nuevo hábito..." class="habit-input">
+                <select id="habitFrequency" class="habit-select">
+                    <option value="Diario">Diario</option>
+                    <option value="Semanal">Semanal</option>
+                    <option value="Personalizado">Personalizado</option>
+                </select>
+                <div class="time-selection">
+                    <input type="time" id="habitStartTime" class="habit-time-input">
+                    <span class="to-time">a</span>
+                    <input type="time" id="habitEndTime" class="habit-time-input">
+                </div>
+            </div>
+
+            <div id="daysSelection" class="days-selection-container" style="display: none;">
+                <div class="days-selection">
+                    <label><input type="checkbox" value="Lunes"> Lunes</label>
+                    <label><input type="checkbox" value="Martes"> Martes</label>
+                    <label><input type="checkbox" value="Miércoles"> Miércoles</label>
+                    <label><input type="checkbox" value="Jueves"> Jueves</label>
+                    <label><input type="checkbox" value="Viernes"> Viernes</label>
+                    <label><input type="checkbox" value="Sábado"> Sábado</label>
+                    <label><input type="checkbox" value="Domingo"> Domingo</label>
+                </div>
+            </div>
+
+            <button onclick="addHabit()">Agregar Hábito</button>
+        </section>
+
+        <section class="habit-list centered-content">
+            <ul id="habitList"></ul>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>

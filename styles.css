@@ -1,0 +1,410 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  body {
+    display: flex;
+    height: 100vh;
+    background-color: #2C3E50;
+    color: white;
+  }
+  
+  .side-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #1c2833;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    color: white;
+  }
+  
+  .side-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .side-menu ul li {
+    font-size: 14px;
+    padding: 10px 0;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+  
+  .side-menu li.selected {
+    background-color: #34495E;
+    border-left: 4px solid #1ABC9C;
+  }
+  
+  .side-menu li:hover {
+    background-color: #2C3E50;
+  }
+  
+  .icon-home::before { content: '🏠'; margin-right: 10px; }
+  .icon-important::before { content: '⭐'; margin-right: 10px; }
+  .icon-planned::before { content: '🗓️'; margin-right: 10px; }
+  .icon-stats::before { content: '📊'; margin-right: 10px; }
+  .icon-settings::before { content: '⚙️'; margin-right: 10px; }
+  .icon-notifications::before { content: '🔔'; margin-right: 10px; }
+  .icon-darkmode::before { content: '🌙'; margin-right: 10px; }
+  
+  .extra {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+
+  .main-container {
+    margin-left: 260px;
+    padding: 20px;
+    background: url('images/bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: calc(100% - 260px);
+    overflow: hidden;
+  }
+  
+  
+  .header-centered {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .header-centered h1 {
+    font-size: 28px;
+    color: white;
+  }
+  
+  .header-centered p {
+    font-size: 16px;
+    color: white;
+  }
+  
+  .add-habit {
+    background-color: #2c3e50;
+    padding: 15px 40px;
+    border-radius: 10px;
+    color: #fff;
+    max-width: 700px; 
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+
+  
+  .add-habit .input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #1c2833;
+    border-radius: 10px;
+    padding: 10px 15px;
+    width: 100%;
+  }
+  
+  .add-habit .plus-icon {
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  .add-habit .habit-input {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    flex-grow: 2;
+    outline: none;
+  }
+  
+  .add-habit .habit-select, .habit-time-input {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 5px;
+    background-color: #1c2833;
+    border-radius: 5px;
+  }
+  
+  .add-habit .habit-time-input {
+    width: 90px;
+  }
+  
+  .time-selection {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+
+  .days-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+  }
+  
+  .days-selection label {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #ecf0f1;
+  }
+  
+  .days-selection input[type="checkbox"] {
+    margin-right: 5px;
+    accent-color: #3498db;
+  }
+  
+  .days-selection-container {
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3); 
+  }
+  
+
+  .habit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+    max-width: 300px;
+  }
+  
+  .habit-card {
+    background-color: #34495e;
+    width: 90%;
+    padding: 10px 15px;
+    border-radius: 6px;
+    color: #ecf0f1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .habit-card input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #1ABC9C;
+    cursor: pointer;
+  }
+  
+  .habit-card input[type="checkbox"]:checked {
+    background-color: #1ABC9C;
+  }
+  
+  .habit-card .btn-delete {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+  
+  .habit-card .btn-delete:hover {
+    color: #c9302c;
+  }
+  
+.add-habit button {
+  background-color: #1ABC9C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.add-habit button:hover {
+  background-color: #16a085;
+}
+
+.add-habit {
+  background-color: #2c3e50;
+  padding: 15px 40px;
+  border-radius: 10px;
+  color: #fff;
+  max-width: 700px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+/* Progreso */
+.progress-list {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #34495e;
+  border-radius: 8px;
+  color: white;
+}
+
+.progress-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.calendar-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); 
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.day-column {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #34495e;
+  color: white;
+}
+
+.day-header {
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+  background-color: #1ABC9C;
+  border-radius: 5px;
+}
+
+.time-block {
+  margin: 5px 0;
+  padding: 5px;
+  background-color: #2C3E50;
+  border-radius: 5px;
+  color: white;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.day-cell {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f5f5f5;
+  min-height: 80px;
+}
+
+.day-cell h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.habit-block {
+  background-color: #3498db;
+  color: white;
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.empty {
+  background-color: transparent;
+  border: none;
+}
+
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(100px, 1fr)); 
+  gap: 5px;
+  overflow-y: auto;
+  max-height: 80vh; 
+  padding: 10px;
+}
+
+.day-cell {
+  border: 1px solid #ccc;
+  padding: 5px;
+  background-color: #f5f5f5;
+  min-height: 100px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.day-cell h3 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.habit-block {
+  background-color: #3498db;
+  color: white;
+  padding: 3px;
+  margin: 3px 0;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+
+
+body, html, .main-container {
+  overflow-x: hidden;
+}
+
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px; 
+  padding: 5px;
+  max-height: 85vh; 
+  overflow-y: auto;
+}
+
+
+.day-cell {
+  border: 1px solid #ddd;
+  padding: 4px; 
+  background-color: #f0f0f0;
+  min-height: 80px; 
+  font-size: 0.85em; 
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.day-cell h3 {
+  margin: 0;
+  font-size: 0.9em; 
+}
+
+
+.habit-block {
+  background-color: #3498db;
+  color: white;
+  padding: 2px;
+  margin: 2px 0; 
+  border-radius: 2px; 
+  font-size: 0.75em; 
+}
+
+
+@media (max-width: 768px) {
+  .calendar-grid {
+      max-height: 70vh;
+  }
+}
+
