@@ -17,7 +17,7 @@ const Habit = sequelize.define('Habit', {
         type: DataTypes.STRING,
     },
     days: {
-        type: DataTypes.STRING, // Convertiremos el array a string al guardar
+        type: DataTypes.STRING, 
         get() {
             return this.getDataValue('days') ? this.getDataValue('days').split(',') : [];
         },
